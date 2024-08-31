@@ -18,7 +18,7 @@ class CSVLoader(DataLoader):
         :return: DataFrame containing the CSV data.
         """
         try:
-            df = pd.read_csv(self.file_path)
+            df = pd.read_csv(self.file_path, on_bad_lines='skip')
             return df
         except FileNotFoundError:
             raise FileNotFoundError(f'Failed to find the following path {self.file_path}')
