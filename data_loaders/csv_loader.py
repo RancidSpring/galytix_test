@@ -11,14 +11,16 @@ class CSVLoader(DataLoader):
         """
         super().__init__(file_path)
 
-    def load_data(self) -> pd.DataFrame:
+    def load_data(self, skip_rows=0, on_bad_lines='skip', delimiter=',', index_col=0) -> pd.DataFrame:
         """
         Load data from a CSV file.
 
         :return: DataFrame containing the CSV data.
         """
         try:
-            df = pd.read_csv(self.file_path, on_bad_lines='skip')
+            df = pd.read_csv(
+                self.file_path, on_bad_lines=on_bad_lines, skiprows=skip_rows, delimiter=delimiter, index_col=index_col
+            )
             return df
         except FileNotFoundError:
             raise FileNotFoundError(f'Failed to find the following path {self.file_path}')
