@@ -1,2 +1,5 @@
 [EXECUTABLES]
-EMBEDDINGS_LOADER = 'scripts.'
+load_embeddings = 'scripts.load_embeddings.main'
+
+[ARGUMENTS]
+[ARGUMENTS.load_embeddings]
