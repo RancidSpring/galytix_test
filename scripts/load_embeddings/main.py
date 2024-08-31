@@ -14,5 +14,5 @@ def main():
     logger.info('Applying processing to embeddings')
     processed_embeddings = preprocess_embeddings(raw_embeddings)
 
-    logger.info('Saving the processed dataset to csv')
+    logger.info('Saving the processed dataset to parquet')
     processed_embeddings.to_parquet(PATH_TO_CLEAN_PARQUET)

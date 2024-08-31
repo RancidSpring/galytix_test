@@ -11,7 +11,7 @@ class CSVLoader(DataLoader):
         """
         super().__init__(file_path)
 
-    def load_data(self, skip_rows=0, on_bad_lines='skip', delimiter=',', index_col=0) -> pd.DataFrame:
+    def load_data(self, skip_rows=0, on_bad_lines='skip', delimiter=',', index_col=0, encoding='unicode_escape') -> pd.DataFrame:
         """
         Load data from a CSV file.
 
@@ -19,7 +19,8 @@ class CSVLoader(DataLoader):
         """
         try:
             df = pd.read_csv(
-                self.file_path, on_bad_lines=on_bad_lines, skiprows=skip_rows, delimiter=delimiter, index_col=index_col
+                self.file_path, on_bad_lines=on_bad_lines, skiprows=skip_rows, delimiter=delimiter, index_col=index_col,
+                encoding=encoding
             )
             return df
         except FileNotFoundError:

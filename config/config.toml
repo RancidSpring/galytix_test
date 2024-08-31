@@ -1,5 +1,10 @@
 [EXECUTABLES]
 load_embeddings = 'scripts.load_embeddings.main'
+calculate_file_similarity = 'scripts.calculate_file_similarity.main'
+
 
 [ARGUMENTS]
 [ARGUMENTS.load_embeddings]
+
+
+[ARGUMENTS.calculate_file_similarity]
