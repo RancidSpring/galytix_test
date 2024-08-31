@@ -1,6 +1,7 @@
+from abc import ABC
 
 
-class DataLoader:
+class DataLoader(ABC):
     def __init__(self, file_path: str):
         """
         Initializes an abstract loader
@@ -14,4 +15,4 @@ class DataLoader:
         Method to load data from a file.
         This should be implemented by subclasses.
         """
-        raise NotImplementedError("Should be implemented for a specific loader type.")
+        pass

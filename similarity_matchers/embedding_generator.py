@@ -7,9 +7,8 @@ import fuzzymatcher
 
 
 class EmbeddingGenerator:
-    def __init__(self, embedding_model_data: pd.DataFrame, data_cleaner: DataCleaner):
+    def __init__(self, embedding_model_data: pd.DataFrame):
         self.model = embedding_model_data
-        self.cleaner = data_cleaner
 
     def get_normalized_phrase_embedding(self, phrase: str):
         words = phrase.split()
@@ -42,19 +41,15 @@ class EmbeddingGenerator:
         else:
             return np.zeros(self.model.shape[1])
 
-    def embed_phrases(self, phrases: Union[pd.Series, str], apply_cleaning=False) -> pd.DataFrame:
+    def embed_phrases(self, phrases: Union[pd.Series, str]) -> pd.DataFrame:
         """
         Takes a pandas Series as an input and outputs the DataFrame with the DataFrame with phrases as an index
         and columns representing vectors of the embedded phrase
         :param phrases: series with the phrases for every row
-        :param apply_cleaning: flag whether we want to apply cleaning
         :return:
         """
         if isinstance(phrases, str):
             phrases = pd.Series([phrases])
-
-        if apply_cleaning:
-            phrases = self.cleaner.apply_cleaning(phrases)
 
         phrases_tokens = phrases.apply(self.get_normalized_phrase_embedding)
         phrases_embedded_df = pd.DataFrame(phrases_tokens)

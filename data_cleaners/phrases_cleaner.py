@@ -4,7 +4,7 @@ import re
 
 
 class PhrasesCleaner(DataCleaner):
-    def apply_cleaning(self, data) -> pd.Series:
+    def apply_cleaning(self, data: pd.Series) -> pd.Series:
         """
         Removes all nonalphabetical characters from the input pandas Series.
 
