@@ -1,0 +1,2 @@
+[EXECUTABLES]
+EMBEDDINGS_LOADER = 'scripts.'
