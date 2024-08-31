@@ -23,4 +23,4 @@ class ParquetLoader(DataLoader):
         except FileNotFoundError:
             raise FileNotFoundError(f'Failed to find the following path {self.file_path}')
         except Exception as e:
-            raise RuntimeError(f"Failed to load CSV file with error: {e}")
+            raise RuntimeError(f"Failed to load parquet file with error: {e}")
