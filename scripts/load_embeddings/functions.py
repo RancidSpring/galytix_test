@@ -28,13 +28,13 @@ def preprocess_embeddings(raw_embeddings: pd.DataFrame) -> pd.DataFrame:
     embeddings = embeddings[embeddings.index != ""]
 
     # --------------------------- Remove stopwords ---------------------------------
-    try:
-        stop_words = set(stopwords.words('english'))
-    except LookupError:
-        nltk.download('stopwords')
-        stop_words = set(stopwords.words('english'))
-
-    embeddings = embeddings[~embeddings.index.isin(stop_words)]
+    # try:
+    #     stop_words = set(stopwords.words('english'))
+    # except LookupError:
+    #     nltk.download('stopwords')
+    #     stop_words = set(stopwords.words('english'))
+    #
+    # embeddings = embeddings[~embeddings.index.isin(stop_words)]
 
     # --------------------------- Remove outliers ----------------------------------
     # I chose to remove vectors with a high magnitude
