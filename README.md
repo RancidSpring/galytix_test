@@ -1,13 +1,17 @@
 Project Plan:
 - [X] Create a structure for the project: create a unified eay of running the scripts and the app from the command line
 - [X] Implement the loaders in an abstract way taking into consideration that the source of data might change
-- [X] Implement a one time script for loading the data and cleaning the embedded dataset
+- [X] Implement a one time script for loading the data and cleaning the embedded dataset: cleaning step
 - [X] Implement the processing classes: embedder, 
 - [X] Implement the processing classes: metrics calculator, 
-- [ ] Implement the processing classes: similarity finder (needs to be constructed from the script)
+- [X] Implement the processing classes: similarity finder
+- [X] Implement the user input processor
+- [X] Implement the app for allowing the app to calculate the match on the fly
+- [X] Documentation diagram, simple instruction on how to execute the project
 - [ ] Implement the tests for the processing classes using pytest (to be done)
-- [ ] Implement the user input processor (to be done)
-- [ ] Implement the app for allowing the app to calculate the match on the fly (when the similarity finder is ready, it should just use it in combination with the input processor)
+- [ ] Implement a better matcher: optimize the Levenstein method to be usable (to be done)
+- [ ] Dockerize
+- [ ] Parallelize
 
 - The whole diagram of the project can be found here:
 ![Alt text](documentation/galytix_diag.png)
