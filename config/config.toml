@@ -1,10 +1,35 @@
 [EXECUTABLES]
 load_embeddings = 'scripts.load_embeddings.main'
 calculate_file_similarity = 'scripts.calculate_file_similarity.main'
-
+run_app = 'app.run_app'
 
 [ARGUMENTS]
 [ARGUMENTS.load_embeddings]
 
 
 [ARGUMENTS.calculate_file_similarity]
+
+
+[ARGUMENTS.run_app]
+[ARGUMENTS.run_app.path_to_model]
+shortcut = '-m'
+fullname = '--path_to_model'
+required = false
+help = 'Specify the path to the parquet file with the embeddings'
+default = 'data/vectors_cleaned.parquet'
+type = 'str'
+[ARGUMENTS.run_app.path_to_baseline_phrases]
+shortcut = '-b'
+fullname = '--path_to_baseline_phrases'
+required = false
+help = 'Specify the path to the csv file with the predefined phrases'
+default = 'data/phrases.csv'
+type = 'str'
+[ARGUMENTS.run_app.metrics]
+shortcut = '-met'
+fullname = '--metrics'
+required = false
+help = 'Specify the metrics to calculate the distances'
+default = 'euclidian'
+choices = ['euclidian', 'cosine']
+type = 'str'
