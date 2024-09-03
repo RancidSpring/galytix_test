@@ -8,4 +8,6 @@ Project Plan:
 - [ ] Implement the tests for the processing classes using pytest (to be done)
 - [ ] Implement the user input processor (to be done)
 - [ ] Implement the app for allowing the app to calculate the match on the fly (when the similarity finder is ready, it should just use it in combination with the input processor)
-- [ ]  
+
+- The whole diagram of the project can be found here:
+![Alt text](documentation/galytix_diag.png)
