@@ -1,5 +1,5 @@
 import pandas as pd
-from similarity_matchers.base_class.metrcis_calculator import MetricsCalculator
+from classes.metrics_calculators.base_class.metrcis_calculator import MetricsCalculator
 from sklearn.metrics.pairwise import cosine_distances
 
 

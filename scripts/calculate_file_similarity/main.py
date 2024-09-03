@@ -1,9 +1,9 @@
-from data_loaders.csv_loader import CSVLoader
-from data_loaders.parquet_loader import ParquetLoader
+from classes.data_loaders.csv_loader import CSVLoader
+from classes.data_loaders.parquet_loader import ParquetLoader
 from scripts.calculate_file_similarity.constants import PHRASES_PATH, MODEL_DATA, OUTPUT_PATH
-from similarity_matchers.embedding_generator import EmbeddingGenerator
-from data_cleaners.phrases_cleaner import PhrasesCleaner
-from similarity_matchers.cosine_metrics_calculator import CosineDistanceCalculator
+from classes.embedding_generators.embedding_generator import EmbeddingGenerator
+from classes.data_cleaners.phrases_cleaner import PhrasesCleaner
+from classes.metrics_calculators.cosine_metrics_calculator import CosineDistanceCalculator
 # from similarity_matchers.similarity_matcher import
 
 

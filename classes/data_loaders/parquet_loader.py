@@ -1,5 +1,5 @@
 import pandas as pd
-from data_loaders.base_class.data_loader import DataLoader
+from classes.data_loaders.base_class.data_loader import DataLoader
 
 
 class ParquetLoader(DataLoader):

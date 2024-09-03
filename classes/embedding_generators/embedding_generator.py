@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 
-from data_cleaners.base_class.data_cleaner import DataCleaner
 from typing import Union
 import fuzzymatcher
 

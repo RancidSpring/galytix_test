@@ -4,7 +4,7 @@ This part I decided to make a script as it is used as a one time thing to load t
 
 from scripts.load_embeddings.functions import preprocess_embeddings
 from scripts.load_embeddings.constants import PATH_TO_RAW_CSV, PATH_TO_CLEAN_PARQUET, logger
-from data_loaders.csv_loader import CSVLoader
+from classes.data_loaders.csv_loader import CSVLoader
 
 
 def main():

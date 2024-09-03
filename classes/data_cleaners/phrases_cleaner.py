@@ -1,4 +1,4 @@
-from data_cleaners.base_class.data_cleaner import DataCleaner
+from classes.data_cleaners.base_class.data_cleaner import DataCleaner
 import pandas as pd
 import re
 
