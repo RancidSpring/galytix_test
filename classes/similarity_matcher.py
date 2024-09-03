@@ -6,12 +6,14 @@ import numpy as np
 
 
 class SimilarityMatcher:
-    def __init__(self, cleaner: DataCleaner, embedder: EmbeddingGenerator, metrics_calculator: MetricsCalculator):
+    def __init__(self, baseline_phrases: pd.Series, cleaner: DataCleaner,
+                 embedder: EmbeddingGenerator, metrics_calculator: MetricsCalculator):
         self.cleaner = cleaner
         self.embedder = embedder
         self.metrics_calculator = metrics_calculator
+        self.baseline_embeddings = self.embedder.embed_phrases(baseline_phrases)
 
-    def find_closest_matches(self, data: pd.Series):
+    def find_closest_matches(self, phrases: pd.Series):
         pass
 
     @staticmethod
