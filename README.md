@@ -11,3 +11,16 @@ Project Plan:
 
 - The whole diagram of the project can be found here:
 ![Alt text](documentation/galytix_diag.png)
+
+To run the project you need to choose from the following run configurations (the order is important):
+- load_embeddings: ex. "-p load_embeddings -bin 'data/binary.bin'"
+- calculate_file_similarity: ex. "-p calculate_file_similarity"
+- run_app: ex. "-p run_app" (it also has a list of configurable parameters for changing the paths)
+
+The parameters can be found in config/config.toml.
+
+The application can be run in two modes:
+- By providing the maunally inputted phrases:
+  - The input string should start with "manual:"
+- By providing a path to CSV or Parquet:
+  - The input string should start with "file:"

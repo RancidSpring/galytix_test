@@ -15,6 +15,7 @@ setup(
         "nltk~=3.9.1",
         "fuzzymatcher~=0.0.6",
         "scikit-learn~=1.5.1",
+        "tabulate~=0.9.0"
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
