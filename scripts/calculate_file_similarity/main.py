@@ -19,8 +19,8 @@ def main():
 
     # ---------------------------- Find similarities ---------------------------------------
     # We have found embeddings for every phrase, now move on to calculate the differences.
-    metrics_calculator = CosineDistanceCalculator(embedded_phrases)
-    distances = metrics_calculator.compute_pairwise_distances()
+    metrics_calculator = CosineDistanceCalculator()
+    distances = metrics_calculator.compute_pairwise_distances(embedded_phrases)
 
     # ---------------------------- Save to the output --------------------------------------
     distances.to_parquet(OUTPUT_PATH)
