@@ -24,12 +24,7 @@ class CosineDistanceCalculator(MetricsCalculator):
         pd.DataFrame: A DataFrame where the indices and columns are phrases, and each cell
                       contains the cosine distance between the corresponding pair of phrases.
         """
-        # Reshape the target_embedding to match the input for euclidean_distances
-        target_embedding = target_embeddings.values.reshape(1, -1)
-
-        # Compute distances from the target embedding to all other embeddings
-        distances = cosine_distances(baseline_embeddings, target_embedding).flatten()
-
-        # Return a Series with phrases as the index
-        distance_series = pd.Series(distances, index=target_embeddings)
+        target_embedding_arr = target_embeddings.values.reshape(len(target_embeddings), -1)
+        distances = cosine_distances(baseline_embeddings, target_embedding_arr).T
+        distance_series = pd.DataFrame(data=distances, index=target_embeddings.index, columns=baseline_embeddings.index)
         return distance_series
