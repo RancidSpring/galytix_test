@@ -5,7 +5,12 @@ run_app = 'app.run_app'
 
 [ARGUMENTS]
 [ARGUMENTS.load_embeddings]
-
+[ARGUMENTS.run_app.path_to_binary]
+shortcut = '-bin'
+fullname = '--path_to_binary'
+required = true
+help = 'Specify the path to the the binary file with embeddings'
+type = 'str'
 
 [ARGUMENTS.calculate_file_similarity]
 

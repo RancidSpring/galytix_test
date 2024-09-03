@@ -6,10 +6,14 @@ import numpy as np
 from nltk.corpus import stopwords
 import nltk
 import re
+import os
 
 
-def load_embeddings_from_binary() -> None:
-    wv = KeyedVectors.load_word2vec_format(PATH_TO_BINARY, binary=True, limit=1000000)
+def load_embeddings_from_binary(path_to_binary) -> None:
+    parent_directory = os.path.dirname(PATH_TO_RAW_CSV)
+    if not os.path.exists(parent_directory):
+        os.makedirs(parent_directory)
+    wv = KeyedVectors.load_word2vec_format(path_to_binary, binary=True, limit=1000000)
     wv.save_word2vec_format(PATH_TO_RAW_CSV)
 
 
