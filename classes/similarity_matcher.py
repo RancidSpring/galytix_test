@@ -1,6 +1,6 @@
 from classes.data_cleaners.base_class.data_cleaner import DataCleaner
 from classes.embedding_generators.embedding_generator import EmbeddingGenerator
-from classes.metrics_calculators.base_class import MetricsCalculator
+from classes.metrics_calculators.base_class.metrcis_calculator import MetricsCalculator
 import pandas as pd
 import numpy as np
 
