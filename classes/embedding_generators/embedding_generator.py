@@ -40,16 +40,13 @@ class EmbeddingGenerator:
         else:
             return np.zeros(self.model.shape[1])
 
-    def embed_phrases(self, phrases: Union[pd.Series, str]) -> pd.DataFrame:
+    def embed_phrases(self, phrases: pd.Series) -> pd.DataFrame:
         """
         Takes a pandas Series as an input and outputs the DataFrame with the DataFrame with phrases as an index
         and columns representing vectors of the embedded phrase
         :param phrases: series with the phrases for every row
         :return:
         """
-        if isinstance(phrases, str):
-            phrases = pd.Series([phrases])
-
         phrases_tokens = phrases.apply(self.get_normalized_phrase_embedding)
         phrases_embedded_df = pd.DataFrame(phrases_tokens)
         phrases_embedded_df['Phrases'] = phrases
