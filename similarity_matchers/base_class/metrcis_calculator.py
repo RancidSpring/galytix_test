@@ -3,15 +3,18 @@ from abc import ABC, abstractmethod
 
 
 class MetricsCalculator(ABC):
-    def __init__(self, embedding_df: pd.DataFrame):
-        self.embedding_df = embedding_df
-        self.embeddings = embedding_df.values
-        self.phrases = embedding_df.index
-
     @abstractmethod
-    def compute_pairwise_distances(self) -> pd.DataFrame:
+    def compute_pairwise_distances(self, embeddings) -> pd.DataFrame:
         """
         Abstract method to compute pairwise distances.
+        This method must be implemented by subclasses.
+        """
+        pass
+
+    @abstractmethod
+    def compute_distances_from(self, target_embeddings, baseline_embeddings):
+        """
+        Abstract method to compute distances of the target phrases from the baseline phrases.
         This method must be implemented by subclasses.
         """
         pass
