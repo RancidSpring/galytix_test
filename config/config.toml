@@ -5,7 +5,7 @@ run_app = 'app.run_app'
 
 [ARGUMENTS]
 [ARGUMENTS.load_embeddings]
-[ARGUMENTS.run_app.path_to_binary]
+[ARGUMENTS.load_embeddings.path_to_binary]
 shortcut = '-bin'
 fullname = '--path_to_binary'
 required = true
